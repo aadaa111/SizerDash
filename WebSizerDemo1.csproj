@@ -57,9 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.html" />
     <Content Include="follows1.js" />
     <Content Include="follows.js" />
+    <Content Include="index.html" />
     <Content Include="SizerHomeFollows.js" />
     <Content Include="SizerHistory.html" />
     <Content Include="SizerHistoryFollows.js" />

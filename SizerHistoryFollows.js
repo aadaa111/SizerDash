@@ -42,11 +42,13 @@
             // Getting realtime!   
             // The function associated with the subscribe method will be executed   
             // every time there is an update to the datastream  
-            xively.datastream.subscribe(feedID, datastreamID, function (event, datastream_updated) {
-                // Display the current value from the updated datastream  
-                drawLine(datastream_updated, selector, column1, column2, feedID);
-                //drawChart();
-            });
+            setTimeout(function () {
+                xively.datastream.subscribe(feedID, datastreamID, function (event, datastream_updated) {
+                    // Display the current value from the updated datastream  
+                    drawLine(datastream_updated, selector, column1, column2, feedID);
+                    //drawChart();
+                });
+            }, 5000);
         });
     }
     // Parse Xively ISO Date Format to Date Object
@@ -105,8 +107,8 @@
                             data.addRows(points);
                             // Set chart options
                             var options = {
-                                'width': 600,
-                                'height': 400,
+                                //'width': 400,
+                                //'height': 300,
                                 //hAxis: { title: column1, format: 'HH:mm MM dd', viewWindowMode: 'maximized' },
                                 //vAxis: { title: column2},
                             };

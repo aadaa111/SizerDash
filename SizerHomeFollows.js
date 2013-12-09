@@ -41,10 +41,12 @@
             // Getting realtime!   
             // The function associated with the subscribe method will be executed   
             // every time there is an update to the datastream  
-            xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {  
-                // Display the current value from the updated datastream  
-                $(selector).html( datastream_updated["current_value"] );  
-            });  
+            setTimeout(function() {
+                xively.datastream.subscribe(feedID, datastreamID, function(event, datastream_updated) {
+                    // Display the current value from the updated datastream  
+                    $(selector).html(datastream_updated["current_value"]);
+                });
+            }, 5000);
         });
     }
     
@@ -61,19 +63,23 @@
             data.addColumn('number', column2);
             data.addRows(arrayStr1);
             // Set chart options
-            //var options = {};
-            var options = {
-                'width': 600,
-                'height': 400,
-                vAxis: { title: column1},
-                hAxis: { title: column2},
-            };
-
             // Instantiate and draw our chart, passing in some options.
             if (isBar) {
+                var options = {
+                    //'width': 400,
+                    //'height': 300,
+                    vAxis: { title: column1},
+                    hAxis: { title: column2},
+                };
                 var chart = new google.visualization.BarChart(document.getElementById(selector));
                 chart.draw(data, options);
             } else {
+               var options = {
+                    'width': 400,
+                    'height': 300,
+                    vAxis: { title: column1 },
+                    hAxis: { title: column2 },
+                };
                 var chart = new google.visualization.PieChart(document.getElementById(selector));
                 chart.draw(data, options);
             }
@@ -97,11 +103,13 @@
             // Getting realtime!   
             // The function associated with the subscribe method will be executed   
             // every time there is an update to the datastream  
-            xively.datastream.subscribe(feedID, datastreamID, function (event, datastream_updated) {
-                // Display the current value from the updated datastream  
-                drawPie(datastream_updated["current_value"], selector, column1, column2, isBar);
-                //drawChart();
-            });
+            setTimeout(function () {
+                 xively.datastream.subscribe(feedID, datastreamID, function (event, datastream_updated) {
+                    // Display the current value from the updated datastream  
+                    drawPie(datastream_updated["current_value"], selector, column1, column2, isBar);
+                    //drawChart();
+                });
+            }, 5000);
         });
     }
     google.load("visualization", "1", { packages: ["corechart"] });
