@@ -1,0 +1,5 @@
+C:\Users\andy.an\Documents\Visual Studio 2012\Projects\WebSizerDemo1\WebSizerDemo1\bin\WebSizerDemo1.dll
+C:\Users\andy.an\Documents\Visual Studio 2012\Projects\WebSizerDemo1\WebSizerDemo1\bin\WebSizerDemo1.pdb
+C:\Users\andy.an\Documents\Visual Studio 2012\Projects\WebSizerDemo1\WebSizerDemo1\obj\Debug\WebSizerDemo1.csprojResolveAssemblyReference.cache
+C:\Users\andy.an\Documents\Visual Studio 2012\Projects\WebSizerDemo1\WebSizerDemo1\obj\Debug\WebSizerDemo1.dll
+C:\Users\andy.an\Documents\Visual Studio 2012\Projects\WebSizerDemo1\WebSizerDemo1\obj\Debug\WebSizerDemo1.pdb

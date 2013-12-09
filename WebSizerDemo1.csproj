@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{981ECC09-17B8-4C83-888B-D13FFC7673AB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebSizerDemo1</RootNamespace>
+    <AssemblyName>WebSizerDemo1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.html" />
+    <Content Include="follows1.js" />
+    <Content Include="follows.js" />
+    <Content Include="SizerHomeFollows.js" />
+    <Content Include="SizerHistory.html" />
+    <Content Include="SizerHistoryFollows.js" />
+    <Content Include="SizerHome.html" />
+    <Content Include="HtmlPage2.html" />
+    <Content Include="img\images_pie1.jpg" />
+    <Content Include="img\SizeDistrubution.png" />
+    <Content Include="js\custom.modernizr.js" />
+    <Content Include="js\d3.v2.js" />
+    <Content Include="js\foundation.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\images\ajax-loader.gif" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\images\icons-18-black.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\images\icons-18-white.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\images\icons-36-black.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\images\icons-36-white.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\jquery.mobile-1.3.0.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\jquery.mobile-1.3.0.min.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\jquery.mobile.structure-1.3.0.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\jquery.mobile.structure-1.3.0.min.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\jquery.mobile.theme-1.3.0.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\jquery.mobile.theme-1.3.0.min.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\backbone-require.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\js\collections\CategoriesCollection.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\js\libs\backbone.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\js\libs\jquery.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\js\libs\jquerymobile.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\js\libs\lodash.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\js\libs\require.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\js\mobile.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\js\models\CategoryModel.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\js\routers\mobileRouter.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\backbone-require\js\views\CategoryView.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\collapsibles\dynamic-collapsible.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\controlgroups\dynamic-controlgroup.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\listviews\autodividers-linkbar-demo.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\listviews\autodividers-linkbar.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\listviews\autodividers-linkbar.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\listviews\autodividers-linkbar.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\listviews\autodividers-selector.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\listviews\grid-listview-demo.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\listviews\grid-listview.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\listviews\grid-listview.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\panels\panel-styling.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\panels\panel-swipe-open.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\popups\arrow.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\popups\dynamic-popup.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\popups\jquery.mobile.popup.arrow.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\popups\popup.arrow.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\redirect\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\redirect\redirect-target.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\slider\slider.tooltip.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\slider\slider.tooltip.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\slider\tooltip.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\swipe\buenosaires.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\swipe\capetown.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\swipe\newyork.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\swipe\paris.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\swipe\seoul.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\swipe\swipe-list.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\swipe\swipe-page.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\swipe\swipe-page.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\swipe\swipe-page.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\swipe\sydney.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\tables\financial-grouped-columns.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\tables\financial-grouped-reflow.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\tables\movie-list-toggle-options.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\tables\movie-list.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\tables\phone-compare.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\controls-in-header-footer.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\disabling-a-button-does-not-work.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\dom-ready-not-working.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\how-can-i-stop-auto-enhancement-of-a-block-of-elements.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\how-can-i-stop-auto-enhancement-of-elements.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\how-configure-phonegap-cordova.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\how-do-i-control-page-titles.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\how-do-i-load-a-page.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\how-do-i-scroll-to-a-position.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\how-do-i-use-touch-mouse-events.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\injected-content-is-not-enhanced.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\my-html-5-inputs-look-different-in-browsers.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\my-range-search-input-type-is-being-changed.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\pass-query-params-to-page.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\pass-via-the-hash-to-page.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\question-template.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\scripts-and-styles-not-loading.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\sometimes-custom-select-shows-as-dialog-popup.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\the-application-cache-is-not-working.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\triggering-create-on-injected-content-does-not-work.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\updating-the-value-of-enhanced-form-elements-does-not-work.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\faq\why-is-only-the-first-page-loaded.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\global-nav.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\intro\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\intro\rwd.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\nav-examples.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\nav-faq.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\nav-widgets.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\search-results.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\search.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\accordions\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\autocomplete\autocomplete-remote.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\autocomplete\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\buttons\buttons-grids.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\buttons\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\checkbox\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\collapsibles\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\controlgroups\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\dialog\dialog-alt.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\dialog\dialog-buttons.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\dialog\dialog-corners.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\dialog\dialog-noclosebtn.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\dialog\dialog-overlay.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\dialog\dialog-rightclosebtn.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\dialog\dialog-success.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\dialog\dialog-with-select.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\dialog\dialog.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\dialog\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\footers\footer-persist-a.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\footers\footer-persist-b.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\footers\footer-persist-c.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\footers\footer-persist-d.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\footers\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\forms\form-disabled.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\forms\form-fieldcontain.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\forms\form-hide-label.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\forms\form-label-hidden.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\forms\form.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\forms\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\grids\grid-custom.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\grids\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\headers\bars-fixed-forms.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\headers\bars-fixed.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\headers\bars-fullscreen.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\headers\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\icons\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\links\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\listviews\collapsible-listview.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\listviews\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\listviews\listview-filter-autocomplete.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\listviews\listview-filter-autodividers.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\listviews\listview-filter-reveal.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\listviews\listview-forms.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\listviews\_OLD_listview.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\loader\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\navbar\footer-persist-a.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\navbar\footer-persist-b.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\navbar\footer-persist-c.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\navbar\footer-persist-d.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\navbar\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\navigation\demo.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\navigation\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\pages\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\pages\multipage-template.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\panels\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\panels\panel-fixed.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\popup\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\popup\map.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\popup\popup-examples.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\popup\popup-examples.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\popup\popup-iframes.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\popup\popup-images.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\radiobuttons\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\selects\custom-selects.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\selects\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\sliders\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\sliders\rangeslider.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\sliders\switch.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\table-column-toggle\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\table-reflow\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\textinputs\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\transitions\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\transitions\page-transitions-dialog.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\widgets\transitions\page-transitions-page.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\css\jqm-demos.css" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\css\jqm_demo-icons-hd.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\css\jqm_demo-icons-sd.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\favicon.ico" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-af.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-ag.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-bb.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-bk.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-hc.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-k.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-mg.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-ok.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-p.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-rh.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-ws.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\album-xx.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\apple.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\bg-pattern.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\bike.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\blackberry_10.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\bmw-thumb.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\bmw.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\buenosaires.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\capetown.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\de.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\fi.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\firefox-logo.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\firefox_os.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\galaxy_express.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\gb.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\gf.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\glyphish-icons\09-chat2.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\glyphish-icons\100-coffee.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\glyphish-icons\18-envelope.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\glyphish-icons\19-gear.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\glyphish-icons\21-skull.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\glyphish-icons\30-key.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\glyphish-icons\34-coffee.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\glyphish-icons\88-beermug.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\glyphish-icons\Read me first - license.txt" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\jquery-logo.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\landrover-thumb.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\landrover.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\lumia_800.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\newyork.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\nexus_7.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\paris.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\phone_galaxy3.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\phone_iphone5.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\phone_lumia920.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\phone_onex.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\photo-landscape.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\photo-portrait.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\photo-run.jpeg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\seoul.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\sydney.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\tesla-thumb.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\tesla.jpg" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\tizen.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\img\us.png" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\js\globalnav.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\js\h2widget.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\js\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\js\jqm-demos.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\js\jquery.mobile.demos-1.3.0.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\_assets\js\view-source.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\index.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\js\jquery.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\js\jquery.mobile-1.3.0.js" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\js\jquery.mobile-1.3.0.min.js" />
+    <Content Include="js\jquery.mobile-1.3.0\images\ajax-loader.gif" />
+    <Content Include="js\jquery.mobile-1.3.0\images\icons-18-black.png" />
+    <Content Include="js\jquery.mobile-1.3.0\images\icons-18-white.png" />
+    <Content Include="js\jquery.mobile-1.3.0\images\icons-36-black.png" />
+    <Content Include="js\jquery.mobile-1.3.0\images\icons-36-white.png" />
+    <Content Include="js\jquery.mobile-1.3.0\jquery.mobile-1.3.0.css" />
+    <Content Include="js\jquery.mobile-1.3.0\jquery.mobile-1.3.0.js" />
+    <Content Include="js\jquery.mobile-1.3.0\jquery.mobile-1.3.0.min.css" />
+    <Content Include="js\jquery.mobile-1.3.0\jquery.mobile-1.3.0.min.js" />
+    <Content Include="js\jquery.mobile-1.3.0\jquery.mobile.structure-1.3.0.css" />
+    <Content Include="js\jquery.mobile-1.3.0\jquery.mobile.structure-1.3.0.min.css" />
+    <Content Include="js\jquery.mobile-1.3.0\jquery.mobile.theme-1.3.0.css" />
+    <Content Include="js\jquery.mobile-1.3.0\jquery.mobile.theme-1.3.0.min.css" />
+    <Content Include="js\rickshaw.min.js" />
+    <Content Include="js\xivelyjs-1.0.0.min.js" />
+    <Content Include="js\zepto.js" />
+    <Content Include="SizerAlarm.html" />
+    <Content Include="SizerSetup.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\.DS_Store" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\redirect\redirect.php" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\redirect\source.php" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51237/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
