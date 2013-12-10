@@ -25,6 +25,12 @@
     // Replace with your own values  
     var default_feed_id = defaultFeeds[0];          // Feed ID  
 
+    function refreshFeedLine(feedID, datastreamID, selector, column1, column2) {
+        // Get datastream data from Xively  
+            xively.datastream.get(feedID, datastreamID, function (datastream) {
+            drawLine(datastream, selector, column1, column2, feedID);
+        });
+    }
 
     function setFeedLine(feedID, datastreamID, selector, column1, column2) {
         // Get datastream data from Xively  
@@ -67,25 +73,31 @@
             updated = updated.parseISO(datastream.at);
             var diff = 21600000;
             var interval = 30;
+            var timeFormat = "HH:mm";
             if (duration == '6hours') {
                 diff = 21600000;
                 interval = 30;
+                timeFormat = "HH:mm";
             }
             if (duration == '1day') {
                 diff = 86400000;
                 interval = 60;
+                timeFormat = "HH:mm";
             }
             if (duration == '1week') {
                 diff = 604800000;
                 interval = 900;
+                timeFormat = "MM-dd HH:mm";
             }
             if (duration == '1month') {
                 interval = 1800;
                 diff = 2628000000;
+                timeFormat = "yy-MM-dd HH:mm";
             }
             if (duration == '90days') {
                 diff = 7884000000;
                 interval = 10800;
+                timeFormat = "yy-MM-dd HH:mm";
             }
             then.setTime(now.getTime() - diff);
             if (updated.getTime() > then.getTime()) {
@@ -109,7 +121,7 @@
                             var options = {
                                 //'width': 400,
                                 //'height': 300,
-                                //hAxis: { title: column1, format: 'HH:mm MM dd', viewWindowMode: 'maximized' },
+                                hAxis: { format: timeFormat, viewWindowMode: 'maximized' },
                                 //vAxis: { title: column2},
                             };
                             // Instantiate and draw our chart, passing in some options.
@@ -127,6 +139,34 @@
     google.setOnLoadCallback(loadCharts);
 
     function loadCharts() {
+        setFeedLine(default_feed_id, "MachineRpm", "MachineRpm", 'Time', 'RPM');
+        setFeedLine(default_feed_id, "MachineFpm", "MachineFpm", 'Time', 'FPM');
+        setFeedLine(default_feed_id, "MachineCupfill", "MachineCupfill", 'Time', 'RPM');
+        setFeedLine(default_feed_id, "MachineTph", "MachineTph", 'Time', 'FPM');
+        $('#radio-choice-1').click(function () {
+            refreshChart('6hours');
+        });
+        $('#radio-choice-2').click(function () {
+            refreshChart('1day');
+        });
+        $('#radio-choice-3').click(function () {
+            refreshChart('1week');
+        });
+        $('#radio-choice-4').click(function () {
+            refreshChart('1month');
+        });
+        $('#radio-choice-5').click(function () {
+            refreshChart('90days');
+        });
+        $('#radio-choice-2').removeAttr('checked').checkboxradio("refresh");
+        $('#radio-choice-3').removeAttr('checked').checkboxradio("refresh");
+        $('#radio-choice-4').removeAttr('checked').checkboxradio("refresh");
+        $('#radio-choice-5').removeAttr('checked').checkboxradio("refresh");
+        $('#radio-choice-1').prop("checked", true).checkboxradio("refresh");
+    }
+    
+    function refreshChart(selectedDuration) {
+        duration = selectedDuration;
         setFeedLine(default_feed_id, "MachineRpm", "MachineRpm", 'Time', 'RPM');
         setFeedLine(default_feed_id, "MachineFpm", "MachineFpm", 'Time', 'FPM');
         setFeedLine(default_feed_id, "MachineCupfill", "MachineCupfill", 'Time', 'RPM');
