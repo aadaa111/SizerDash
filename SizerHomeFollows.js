@@ -126,6 +126,7 @@
         setFeed(default_feed_id, "MachineCupfill", "#MachineCupfill_text");
         setFeedChart(default_feed_id, "GradeDistribution", "GradeDistribution", 'Grade', 'FPM', false);
         setFeedChart(default_feed_id, "SizeDistribution", "SizeDistribution", 'Size', 'FPM', true);
+        setFeedChart(default_feed_id, "LanesCupfill", "LanesCupfill", 'Lane', 'Cupfill', true);
     }
     //drawChart();
     function drawChart() {
