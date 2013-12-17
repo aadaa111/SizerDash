@@ -80,9 +80,8 @@
                 chart.draw(data, options);
             } else {
                var options = {
-                    'width': 400,
                     'height': 300,
-                    'chartArea': { left: 50, top: 20, width:"90%", height:"90%" },
+                    'chartArea': { left: 50, top: 20, height:"85%" },
                     vAxis: { title: column1 },
                     hAxis: { title: column2 },
                 };
