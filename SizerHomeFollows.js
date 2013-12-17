@@ -72,7 +72,7 @@
                 var options = {
                     //'width': 400,
                     'height': height,
-                    'chartArea': { top: 20, height:height-80 },
+                    'chartArea': { left: "20%", top: 20, width: "70%", height: height - 80 },
                     vAxis: { title: column1},
                     hAxis: { title: column2},
                 };
