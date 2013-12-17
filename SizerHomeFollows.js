@@ -64,10 +64,15 @@
             data.addRows(arrayStr1);
             // Set chart options
             // Instantiate and draw our chart, passing in some options.
+            var height = 300;
+            if (arrayStr1.length > 10) {
+                height = 30 * arrayStr1.length;
+            }
             if (isBar) {
                 var options = {
                     //'width': 400,
-                    //'height': 300,
+                    'height': height,
+                    'chartArea': { top: 20, width: "80%", height:height-80 },
                     vAxis: { title: column1},
                     hAxis: { title: column2},
                 };
@@ -77,6 +82,7 @@
                var options = {
                     'width': 400,
                     'height': 300,
+                    'chartArea': { left: 30, top: 20, width:"90%", height:"90%" },
                     vAxis: { title: column1 },
                     hAxis: { title: column2 },
                 };
