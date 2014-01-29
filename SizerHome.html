@@ -4,7 +4,7 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="js/jquery.mobile-1.3.0/jquery.mobile-1.3.0.css" />
-
+ <!--   <link rel="stylesheet" href="themes/SizerMan.min.css" />-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
@@ -38,13 +38,14 @@
 
 </head>
 <body>
-    <div data-role="page">
-    
+    <div data-role="page" data-theme="b">
+        <div data-role="header" data-position="inline">
+            <h1 align="center">
+                Sizer Dashboard
+            </h1>
+        </div>
         <div data-role="content">
 
-            <h2 align="center">
-                Sizer Dashboard
-            </h2>
             <div data-role="collapsible-set">
                 <div data-role="collapsible" data-collapsed="false">
                     <h3>
@@ -133,30 +134,30 @@
         </div>
 
         <div data-theme="a" data-role="footer" data-position="fixed" data-id="myfooter">
-        <div data-role="navbar" data-iconpos="top">
-            <ul>
-                <li>
-                    <a href="SizerHome.html" rel="external" data-transition="fade" data-theme="" data-icon="home" class="ui-btn-active ui-state-persist">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="SizerHistory.html" rel="external" data-transition="fade" data-theme="" data-icon="info">
-                        History
-                    </a>
-                </li>
-                <li>
-                    <a href="SizerAlarm.html" rel="external" data-transition="fade" data-theme="" data-icon="alert">
-                        Alarm
-                    </a>
-                </li>
-                 <li>
-                    <a href="SizerSetup.html" rel="external" data-transition="fade" data-theme="" data-icon="gear">
-                        Setup
-                    </a>
-                </li>
-            </ul>
-        </div>   
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a href="SizerHome.html" rel="external" data-transition="fade" data-theme="" data-icon="home" class="ui-btn-active ui-state-persist">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="SizerHistory.html" rel="external" data-transition="fade" data-theme="" data-icon="info">
+                            History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="SizerAlarm.html" rel="external" data-transition="fade" data-theme="" data-icon="alert">
+                            Alarm
+                        </a>
+                    </li>
+                    <li>
+                        <a href="SizerSetup.html" rel="external" data-transition="fade" data-theme="" data-icon="gear">
+                            Setup
+                        </a>
+                    </li>
+                </ul>
+            </div>   
 
         </div>        
 
