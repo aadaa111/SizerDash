@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="js/jquery.mobile-1.3.0/jquery.mobile-1.3.0.css" />
+ <!--   <link rel="stylesheet" href="themes/SizerMan.min.css" />-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+	<script src="js/custom.modernizr.js"></script>
+	<script src="js/xivelyjs-1.0.0.min.js"></script>
+	<script src="js/d3.v2.js"></script>
+    <script src="js/rickshaw.min.js"></script>
+
+	<script src="js/foundation.min.js"></script>
+    <script src="js/jquery.mobile-1.3.0/jquery.mobile-1.3.0.js"></script>
+    <script src="js/detectmobilebrowser.js"></script>
+   
+    
+    <script type="text/javascript">
+        var useCss1 = false;
+        if (useCss1) {
+            document.write('<link  href="blah1.cs" />');
+        } else {
+            document.write('<link ref="stylesheet1"  href="HomeStyleSheet.css" />');
+        }
+        function style_set() {
+            $("h3 a").click(function (event) {
+                return false;
+            });
+        }
+
+
+        $(document).ready(function () {
+
+            console.log("ready!");
+            style_set();
+            if (jQuery.browser.Mobile) {
+                
+            }
+        });
+
+
+
+    </script>
+
+    <style type="text/css">
+        .name_style1 
+        {
+            color:black;
+            font-weight: bold;
+        }
+        .value_style1 
+        {
+            color:blue;
+        }
+        .hidden {
+            display: none;
+        }
+
+        #xivelyContent {
+            background: #fff;
+        }
+
+    </style>
+    <style type="text/css">
+        
+    </style>
+</head>
+<body>
+    <div data-role="page" data-theme="b">
+        <div data-role="header" data-position="inline" data-fullscreen="true">
+            <H1 align="center">
+                Sizer Dashboard
+            </H1>
+        </div>
+        <div data-role="content">
+            <div class="ui-grid-a" style="margin-bottom: 50px">
+
+                <div class="ui-block-a">
+                                <div data-role="collapsible-set">
+                <div  data-role="collapsible" data-collapsed="false">
+                    <h3>
+                        Batch Info
+                    </h3>
+                    <div>
+                        <table>
+                            <tr>
+                                <td width="120px" class="name_style1">Batch Name</td>
+                                <td class="value_style1"><span id="BatchName_text"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="name_style1">Variety Name</td>
+                                <td class="value_style1"><span id="VarietyName_text"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="name_style1">Grower Name</td>
+                                <td class="value_style1"><span id="GrowerName_text"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+                </div>
+
+                <div class="ui-block-b">
+                                <div data-role="collapsible-set">
+                                          <div data-role="collapsible" data-collapsed="false">
+                                              <h3>
+                                                  Speed
+                                              </h3>
+                                              <div>
+                                                  <table>
+                                                      <tr>
+                                                          <td width="120px" class="name_style1">Machine FPM</td>
+                                                          <td class="value_style1"><span id="MachineFpm_text">0</span></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td class="name_style1">Machine RPM</td>
+                                                          <td class="value_style1"><span id="MachineRpm_text">0</span></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td width="120px" class="name_style1">Machine TPH</td>
+                                                          <td class="value_style1"><span id="MachineTph_text">0</span></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td class="name_style1">Machine Cupfill</td>
+                                                          <td class="value_style1"><span id="MachineCupfill_text">0</span></td>
+                                                      </tr>
+                                                  </table>
+
+                                              </div>
+                                          </div>
+                                      </div>
+                </div>
+                  </div>
+            
+            <div class="ui-grid-a">
+
+                <div class="ui-block-a">
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>
+                        Grade Distribution
+                    </h3>
+                    <div id="GradeDistribution">
+                        <!--                    <img id="grade_pie" width="250px" src="./img/images_pie1.jpg"/>-->
+
+                    </div>
+                </div>
+            </div>
+                   
+                </div>
+                <div class="ui-block-b">
+                                <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>
+                        Size Distribution
+                    </h3>
+                    <div id="SizeDistribution">
+                        <!--                    <p>Note: Only example, need further develope</p>
+                            <img id="size_distrubution" width="500px" src="./img/SizeDistrubution.png"/>-->
+                    </div>
+                </div>
+            </div>    
+
+                </div>
+
+            </div><!-- /grid-b -->
+
+
+
+        </div>
+        <div data-theme="a" data-role="footer" data-position="fixed" data-id="myfooter" data-fullscreen="true">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a href="SizerHome_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="home" class="ui-btn-active ui-state-persist">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="SizerHistory_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="info">
+                            History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="SizerAlarm_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="alert">
+                            Alarm
+                        </a>
+                    </li>
+                    <li>
+                        <a href="SizerSetup_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="gear">
+                            Setup
+                        </a>
+                    </li>
+                </ul>
+            </div>   
+
+        </div>        
+
+    </div>
+    
+
+    <!--    <script src="js/foundation.min.js"></script>-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="SizerHomeFollows.js"></script>
+
+</body>
+</html>

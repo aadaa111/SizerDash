@@ -59,7 +59,11 @@
   <ItemGroup>
     <Content Include="follows1.js" />
     <Content Include="follows.js" />
+    <Content Include="HomeStyleSheet.css" />
     <Content Include="index.html" />
+    <Content Include="js\detectmobilebrowser.js" />
+    <Content Include="SizerAlarm_TV.html" />
+    <Content Include="SizerHistory_TV.html" />
     <Content Include="SizerHomeFollows.js" />
     <Content Include="SizerHistory.html" />
     <Content Include="SizerHistoryFollows.js" />
@@ -325,7 +329,9 @@
     <Content Include="js\xivelyjs-1.0.0.min.js" />
     <Content Include="js\zepto.js" />
     <Content Include="SizerAlarm.html" />
+    <Content Include="SizerHome_TV.html" />
     <Content Include="SizerSetup.html" />
+    <Content Include="SizerSetup_TV.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

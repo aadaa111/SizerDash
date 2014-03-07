@@ -1,5 +1,5 @@
 ﻿(function($) {
-    var isMobile = false;
+    var isMobile = jQuery.browser.mobile;
     /*
 	EXAMPLE CONFIGURATION
 
