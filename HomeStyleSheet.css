@@ -1,0 +1,11 @@
+﻿body {
+}
+.tv-layout {
+    background: aqua;
+}
+.tv-layout .ui-collapsible-inset .ui-collapsible-heading .ui-btn {
+    border: none;
+}
+.ui-title {
+    font-size: 30px;
+}

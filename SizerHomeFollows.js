@@ -1,5 +1,5 @@
 ﻿(function($) {
-
+    var isMobile = false;
     /*
 	EXAMPLE CONFIGURATION
 
@@ -65,8 +65,11 @@
             // Set chart options
             // Instantiate and draw our chart, passing in some options.
             var height = 300;
-            if (arrayStr1.length > 10) {
-                height = 30 * arrayStr1.length;
+            if (!isMobile) {
+                height = $(document).height() /2;
+            }
+            else if (arrayStr1.length > 10 && isBar) {
+                height = 40 * arrayStr1.length;
             }
             if (isBar) {
                 var options = {
@@ -80,7 +83,7 @@
                 chart.draw(data, options);
             } else {
                var options = {
-                    'height': 300,
+                   'height': height,
                     'chartArea': { left: 50, top: 20, height:"85%" },
                     vAxis: { title: column1 },
                     hAxis: { title: column2 },
