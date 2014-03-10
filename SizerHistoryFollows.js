@@ -59,7 +59,7 @@
     function setFeedLine(datastream, datastreamID, selector, column1, column2) {
         // Get datastream data from Xively  
             // Display the current value from the datastream  
-            drawLine(datastream, selector, column1, column2, feedID);
+        drawLine(datastream, datastreamID, selector, column1, column2, default_feed_id);
     }
     // Parse Xively ISO Date Format to Date Object
     Date.prototype.parseISO = function (iso) {
@@ -68,9 +68,9 @@
         return new Date(stamp);
     };
 
-    function drawLine(datastream, datastreamID, selector, column1, column2, feedId) {
-
-        if (datastream && datastream.id == datastreamID) {
+    function drawLine(datastream, datastreamId, selector, column1, column2, feedId) {
+        var elementId = document.getElementById(selector);
+        if (elementId && datastream && datastream.id == datastreamId) {
             var now = new Date();
             var then = new Date();
             var updated = new Date;
@@ -129,7 +129,7 @@
                                 //vAxis: { title: column2},
                             };
                             // Instantiate and draw our chart, passing in some options.
-                            var chart = new google.visualization.LineChart(document.getElementById(selector));
+                            var chart = new google.visualization.LineChart(elementId);
                             chart.draw(data, options);
                             
                         }
@@ -143,6 +143,8 @@
     google.setOnLoadCallback(loadCharts);
 
     function loadCharts() {
+        setWholeFeed(default_feed_id);
+
         $('#radio-choice-1').click(function () {
             refreshChart('6hours');
         });
