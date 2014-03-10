@@ -32,41 +32,45 @@
         });
     }
 
-    function setFeedLine(feedID, datastreamID, selector, column1, column2) {
-        // Get datastream data from Xively  
-        xively.datastream.get(feedID, datastreamID, function (datastream) {
-            // WARNING: This code is only executed when we get a response back from Xively,   
-            // it will likely execute after the rest your script  
-            //  
-            // NOTE: The variable "datastream" will contain all the Datastream information   
-            // as an object. The structure of Datastream objects can be found at:   
-            // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream  
+    function setWholeFeed(feedID) {
+        xively.feed.get(feedID, function (feed) {
 
-            // Display the current value from the datastream  
-            drawLine(datastream, selector, column1, column2, feedID);
-            //drawChart();
-            // Getting realtime!   
-            // The function associated with the subscribe method will be executed   
-            // every time there is an update to the datastream  
+            doDisplaying(feed);
             setTimeout(function () {
-                xively.datastream.subscribe(feedID, datastreamID, function (event, datastream_updated) {
+                xively.feed.subscribe(feedID, function (event, feedUpdated) {
                     // Display the current value from the updated datastream  
-                    drawLine(datastream_updated, selector, column1, column2, feedID);
-                    //drawChart();
+                    doDisplaying(feedUpdated);
                 });
             }, 5000);
+
         });
+    }
+    function doDisplaying(feed) {
+        if (feed.datastreams) {
+            feed.datastreams.forEach(function (datastream) {
+                setFeedLine(datastream, "MachineRpm", "MachineRpm", 'Time', 'RPM');
+                setFeedLine(datastream, "MachineFpm", "MachineFpm", 'Time', 'FPM');
+                setFeedLine(datastream, "MachineCupfill", "MachineCupfill", 'Time', 'RPM');
+                setFeedLine(datastream, "MachineTph", "MachineTph", 'Time', 'FPM');
+            });
+        }
+    }
+
+    function setFeedLine(datastream, datastreamID, selector, column1, column2) {
+        // Get datastream data from Xively  
+            // Display the current value from the datastream  
+            drawLine(datastream, selector, column1, column2, feedID);
     }
     // Parse Xively ISO Date Format to Date Object
     Date.prototype.parseISO = function (iso) {
         var stamp = Date.parse(iso);
         if (!stamp) throw iso + ' Unknown date format';
         return new Date(stamp);
-    }
+    };
 
-    function drawLine(datastream, selector, column1, column2, feedId) {
+    function drawLine(datastream, datastreamID, selector, column1, column2, feedId) {
 
-        if (datastream) {
+        if (datastream && datastream.id == datastreamID) {
             var now = new Date();
             var then = new Date();
             var updated = new Date;
@@ -139,10 +143,6 @@
     google.setOnLoadCallback(loadCharts);
 
     function loadCharts() {
-        setFeedLine(default_feed_id, "MachineRpm", "MachineRpm", 'Time', 'RPM');
-        setFeedLine(default_feed_id, "MachineFpm", "MachineFpm", 'Time', 'FPM');
-        setFeedLine(default_feed_id, "MachineCupfill", "MachineCupfill", 'Time', 'RPM');
-        setFeedLine(default_feed_id, "MachineTph", "MachineTph", 'Time', 'FPM');
         $('#radio-choice-1').click(function () {
             refreshChart('6hours');
         });

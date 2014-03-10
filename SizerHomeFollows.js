@@ -19,41 +19,56 @@
         dataInterval = 10, // Default interval for data to be displayed (in seconds)
         dataColor = '', // CSS HEX value of color to represent data (omit leading #)
         hideForm = 0; // To hide input form use value of 1, otherwise set to 0
-    
-    xively.setKey( defaultKey );  
-  
+
+    xively.setKey(defaultKey);
+
     // Replace with your own values  
-    var default_feed_id = defaultFeeds[0];          // Feed ID  
-  
-    function setFeed(feedID, datastreamID, selector) {
-        // Get datastream data from Xively  
-        xively.datastream.get (feedID, datastreamID, function ( datastream ) {  
-            // WARNING: This code is only executed when we get a response back from Xively,   
-            // it will likely execute after the rest your script  
-            //  
-            // NOTE: The variable "datastream" will contain all the Datastream information   
-            // as an object. The structure of Datastream objects can be found at:   
-            // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream  
-  
-            // Display the current value from the datastream  
-            $(selector).html( datastream["current_value"] );  
-  
-            // Getting realtime!   
-            // The function associated with the subscribe method will be executed   
-            // every time there is an update to the datastream  
-            setTimeout(function() {
-                xively.datastream.subscribe(feedID, datastreamID, function(event, datastream_updated) {
+    var default_feed_id = defaultFeeds[0]; // Feed ID  
+
+    function setWholeFeed(feedID)
+    {
+        xively.feed.get(feedID, function(feed) {
+
+            doDisplaying(feed);
+            setTimeout(function () {
+                xively.feed.subscribe(feedID, function (event, feedUpdated) {
                     // Display the current value from the updated datastream  
-                    $(selector).html(datastream_updated["current_value"]);
+                    doDisplaying(feedUpdated);
                 });
             }, 5000);
+
         });
+    }
+
+    function doDisplaying(feed) {
+        if (feed.datastreams) {
+            feed.datastreams.forEach(function (datastream) {
+                setFeed(datastream, "VarietyName", "#VarietyName_text");
+                setFeed(datastream, "BatchName", "#BatchName_text");
+                setFeed(datastream, "GrowerName", "#GrowerName_text");
+                setFeed(datastream, "MachineRpm", "#MachineRpm_text");
+                setFeed(datastream, "MachineFpm", "#MachineFpm_text");
+                setFeed(datastream, "MachineTph", "#MachineTph_text");
+                setFeed(datastream, "MachineCupfill", "#MachineCupfill_text");
+                setFeedChart(datastream, "GradeDistribution", "GradeDistribution", 'Grade', 'FPM', false);
+                setFeedChart(datastream, "SizeDistribution", "SizeDistribution", 'Size', 'FPM', true);
+                setFeedChart(datastream, "LanesCupfill", "LanesCupfill", 'Lane', 'Cupfill', true);
+            });
+        }
+    }
+  
+    function setFeed(datastream, datastreamId, selector) {
+        if (datastream.id == datastreamId) {
+            $(selector).html( datastream["current_value"] );  
+        }
     }
     
     function drawPie(dataString, selector, column1, column2, isBar) {
         //var arrayStr = "'A':30,'B':50,'C':200,'D':140,'E':45,'F':100";
-        if (dataString) {
-             var arrayStr1 = dataString.split(",");
+
+        var elementId = document.getElementById(selector);
+        if (elementId && dataString) {
+                var arrayStr1 = dataString.split(",");
             for (var i = 0; i < arrayStr1.length; i++) {
                 arrayStr1[i] = arrayStr1[i].split(':');
                 arrayStr1[i][1] = parseFloat(arrayStr1[i][1]);
@@ -82,59 +97,31 @@
                 var chart = new google.visualization.BarChart(document.getElementById(selector));
                 chart.draw(data, options);
             } else {
-               var options = {
-                   'height': height,
+                var options = {
+                    'height': height,
                     'chartArea': { left: 50, top: 20, height:"85%" },
                     vAxis: { title: column1 },
                     hAxis: { title: column2 },
                 };
-                var chart = new google.visualization.PieChart(document.getElementById(selector));
+                var chart = new google.visualization.PieChart(elementId);
                 chart.draw(data, options);
             }
            
         }
     }
 
-    function setFeedChart(feedID, datastreamID, selector, column1, column2, isBar) {
+    function setFeedChart(datastream, datastreamId, selector, column1, column2, isBar) {
         // Get datastream data from Xively  
-        xively.datastream.get(feedID, datastreamID, function (datastream) {
-            // WARNING: This code is only executed when we get a response back from Xively,   
-            // it will likely execute after the rest your script  
-            //  
-            // NOTE: The variable "datastream" will contain all the Datastream information   
-            // as an object. The structure of Datastream objects can be found at:   
-            // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream  
-
-            // Display the current value from the datastream  
+        if (datastream.id == datastreamId) {
             drawPie(datastream["current_value"], selector, column1, column2, isBar);
-            //drawChart();
-            // Getting realtime!   
-            // The function associated with the subscribe method will be executed   
-            // every time there is an update to the datastream  
-            setTimeout(function () {
-                 xively.datastream.subscribe(feedID, datastreamID, function (event, datastream_updated) {
-                    // Display the current value from the updated datastream  
-                    drawPie(datastream_updated["current_value"], selector, column1, column2, isBar);
-                    //drawChart();
-                });
-            }, 5000);
-        });
+        }
     }
     google.load("visualization", "1", { packages: ["corechart"] });
     
     google.setOnLoadCallback(loadCharts);
 
     function loadCharts() {
-        setFeed(default_feed_id, "VarietyName", "#VarietyName_text");
-        setFeed(default_feed_id, "BatchName", "#BatchName_text");
-        setFeed(default_feed_id, "GrowerName", "#GrowerName_text");
-        setFeed(default_feed_id, "MachineRpm", "#MachineRpm_text");
-        setFeed(default_feed_id, "MachineFpm", "#MachineFpm_text");
-        setFeed(default_feed_id, "MachineTph", "#MachineTph_text");
-        setFeed(default_feed_id, "MachineCupfill", "#MachineCupfill_text");
-        setFeedChart(default_feed_id, "GradeDistribution", "GradeDistribution", 'Grade', 'FPM', false);
-        setFeedChart(default_feed_id, "SizeDistribution", "SizeDistribution", 'Size', 'FPM', true);
-        setFeedChart(default_feed_id, "LanesCupfill", "LanesCupfill", 'Lane', 'Cupfill', true);
+        setWholeFeed(default_feed_id);
     }
     //drawChart();
     function drawChart() {

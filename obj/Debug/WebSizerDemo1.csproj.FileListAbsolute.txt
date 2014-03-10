@@ -3,3 +3,8 @@ C:\Users\andy.an\Documents\Visual Studio 2012\Projects\WebSizerDemo1\WebSizerDem
 C:\Users\andy.an\Documents\Visual Studio 2012\Projects\WebSizerDemo1\WebSizerDemo1\obj\Debug\WebSizerDemo1.csprojResolveAssemblyReference.cache
 C:\Users\andy.an\Documents\Visual Studio 2012\Projects\WebSizerDemo1\WebSizerDemo1\obj\Debug\WebSizerDemo1.dll
 C:\Users\andy.an\Documents\Visual Studio 2012\Projects\WebSizerDemo1\WebSizerDemo1\obj\Debug\WebSizerDemo1.pdb
+C:\Users\andy.an\Documents\GitHub\SizerDash\bin\WebSizerDemo1.dll
+C:\Users\andy.an\Documents\GitHub\SizerDash\bin\WebSizerDemo1.pdb
+C:\Users\andy.an\Documents\GitHub\SizerDash\obj\Debug\WebSizerDemo1.csprojResolveAssemblyReference.cache
+C:\Users\andy.an\Documents\GitHub\SizerDash\obj\Debug\WebSizerDemo1.dll
+C:\Users\andy.an\Documents\GitHub\SizerDash\obj\Debug\WebSizerDemo1.pdb
