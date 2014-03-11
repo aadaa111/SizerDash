@@ -30,15 +30,8 @@
                 return false;
             });
         }
-
-
         $(document).ready(function () {
-
-            console.log("ready!");
             style_set();
-            if (jQuery.browser.Mobile) {
-
-            }
         });
 
 
@@ -54,6 +47,10 @@
         .value_style1 {
             color: blue;
         }
+        .value_style2 {
+            color: blue;
+            width: 40px;
+        }
 
         .hidden {
             display: none;
@@ -61,6 +58,9 @@
 
         #xivelyContent {
             background: #fff;
+        }
+        .ui-collapsible-heading .ui-icon {
+            display: none;
         }
     </style>
     <style type="text/css">
@@ -74,64 +74,85 @@
             </h1>
         </div>
         <div data-role="content">
-            <table style="width:100%; height:80%">
+            <table style="width:100%; ">
                 <tr>
                     <td  style="vertical-align: top; width:50%">
-                        <div data-role="collapsible-set">
-                            <div data-role="collapsible" data-collapsed="false">
-                                <h3>Batch Info
-                                </h3>
-                                <div>
-                                    <table>
-                                        <tr>
-                                            <td class="name_style1">Batch Name</td>
-                                            <td class="value_style1"><span id="BatchName_text"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="name_style1">Variety Name</td>
-                                            <td class="value_style1"><span id="VarietyName_text"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="name_style1">Grower Name</td>
-                                            <td class="value_style1"><span id="GrowerName_text"></span></td>
-                                        </tr>
-                                    </table>
+                                <div data-role="collapsible-set">
+                                    <div data-role="collapsible" data-collapsed="false">
+                                        <h3>Batch Infomation
+                                        </h3>
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td class="name_style1">Batch Name</td>
+                                                    <td class="value_style1"><span id="BatchName_text"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="name_style1">Variety Name</td>
+                                                    <td class="value_style1"><span id="VarietyName_text"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="name_style1">Grower Name</td>
+                                                    <td class="value_style1"><span id="GrowerName_text"></span></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                                <div data-role="collapsible-set">
+                                    <div data-role="collapsible" data-collapsed="false">
+                                        <h3>Speed
+                                        </h3>
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td class="value_style2"><span id="MachineFpm_text">0</span></td>
+                                                    <td class="name_style1">FPM (Fruits Per Minute)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="value_style2"><span id="MachineRpm_text">0</span></td>
+                                                    <td class="name_style1">RPM (Rods Per Minute)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="value_style2"><span id="MachineTph_text">0</span></td>
+                                                    <td class="name_style1">TPH (Tones Per Hour)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="value_style2"><span id="MachinePph_text">0</span></td>
+                                                    <td class="name_style1">PPM (Pack Per Minute)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="value_style2"><span id="MachineCupfill_text">0</span>%</td>
+                                                    <td class="name_style1">Cupfill</td>
+                                                </tr>
+                                            </table>
 
-                        <div data-role="collapsible-set">
-                            <div data-role="collapsible" data-collapsed="false">
-                                <h3>Speed
-                                </h3>
-                                <div>
-                                    <table>
-                                        <tr>
-                                            <td class="value_style1"><span id="MachineFpm_text">0</span></td>
-                                            <td class="name_style1">FPM (Fruits Per Minute)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="value_style1"><span id="MachineRpm_text">0</span></td>
-                                            <td class="name_style1">RPM (Rods Per Minute)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="value_style1"><span id="MachineTph_text">0</span></td>
-                                            <td class="name_style1">TPH (Tones Per Hour)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="value_style1"><span id="MachinePph_text">0</span></td>
-                                            <td class="name_style1">PPM (Pack Per Minute)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="value_style1"><span id="MachineCupfill_text">0</span>%</td>
-                                            <td class="name_style1">Cupfill</td>
-                                        </tr>
-                                    </table>
-
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                                <div data-role="collapsible-set">
+                                    <div data-role="collapsible" data-collapsed="false">
+                                        <h3>Outside Information
+                                        </h3>
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td class="value_style2"><span id="Span1">0</span></td>
+                                                    <td class="name_style1">Bins dumped at bin dumper</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="value_style2"><span id="Span2">0</span></td>
+                                                    <td class="name_style1">Case count at the stamper</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="value_style2"><span id="Span3">0</span>%</td>
+                                                    <td class="name_style1">Palletized by the robots</td>
+                                                </tr>
+                                            </table>
 
+                                        </div>
+                                    </div>
+                                </div>
                     </td>
                     <td style="vertical-align: top">
                         <div data-role="collapsible-set" aria-orientation="horizontal">
