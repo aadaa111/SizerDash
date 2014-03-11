@@ -50,8 +50,10 @@
                 setFeed(datastream, "MachineFpm", "#MachineFpm_text");
                 setFeed(datastream, "MachineTph", "#MachineTph_text");
                 setFeed(datastream, "MachineCupfill", "#MachineCupfill_text");
+                setFeed(datastream, "MachinePph", "#MachinePph_text");
                 setFeedChart(datastream, "GradeDistribution", "GradeDistribution", 'Grade', 'FPM', false);
                 setFeedChart(datastream, "SizeDistribution", "SizeDistribution", 'Size', 'FPM', true);
+                setFeedChart(datastream, "QualityDistribution", "QualityDistribution", 'Quality', 'FPM', false);
                 setFeedChart(datastream, "LanesCupfill", "LanesCupfill", 'Lane', 'Cupfill', true);
             });
         }
@@ -81,7 +83,7 @@
             // Instantiate and draw our chart, passing in some options.
             var height = 300;
             if (!isMobile) {
-                height = $(document).height() /2;
+                height = 400;
             }
             else if (arrayStr1.length > 10 && isBar) {
                 height = 40 * arrayStr1.length;

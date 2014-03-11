@@ -74,123 +74,136 @@
             </h1>
         </div>
         <div data-role="content">
-            <div class="ui-grid-a" style="margin-bottom: 50px">
-
-                <div class="ui-block-a">
-                    <div data-role="collapsible-set">
-                        <div data-role="collapsible" data-collapsed="false">
-                            <h3>Batch Info
-                            </h3>
-                            <div>
-                                <table>
-                                    <tr>
-                                        <td width="120px" class="name_style1">Batch Name</td>
-                                        <td class="value_style1"><span id="BatchName_text"></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="name_style1">Variety Name</td>
-                                        <td class="value_style1"><span id="VarietyName_text"></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="name_style1">Grower Name</td>
-                                        <td class="value_style1"><span id="GrowerName_text"></span></td>
-                                    </tr>
-                                </table>
+            <table style="width:100%; height:80%">
+                <tr>
+                    <td  style="vertical-align: top; width:50%">
+                        <div data-role="collapsible-set">
+                            <div data-role="collapsible" data-collapsed="false">
+                                <h3>Batch Info
+                                </h3>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td class="name_style1">Batch Name</td>
+                                            <td class="value_style1"><span id="BatchName_text"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name_style1">Variety Name</td>
+                                            <td class="value_style1"><span id="VarietyName_text"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name_style1">Grower Name</td>
+                                            <td class="value_style1"><span id="GrowerName_text"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
+                        <div data-role="collapsible-set">
+                            <div data-role="collapsible" data-collapsed="false">
+                                <h3>Speed
+                                </h3>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td class="value_style1"><span id="MachineFpm_text">0</span></td>
+                                            <td class="name_style1">FPM (Fruits Per Minute)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="value_style1"><span id="MachineRpm_text">0</span></td>
+                                            <td class="name_style1">RPM (Rods Per Minute)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="value_style1"><span id="MachineTph_text">0</span></td>
+                                            <td class="name_style1">TPH (Tones Per Hour)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="value_style1"><span id="MachinePph_text">0</span></td>
+                                            <td class="name_style1">PPM (Pack Per Minute)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="value_style1"><span id="MachineCupfill_text">0</span>%</td>
+                                            <td class="name_style1">Cupfill</td>
+                                        </tr>
+                                    </table>
 
-                <div class="ui-block-b">
-                    <div data-role="collapsible-set">
-                        <div data-role="collapsible" data-collapsed="false">
-                            <h3>Speed
-                            </h3>
-                            <div>
-                                <table>
-                                    <tr>
-                                        <td width="120px" class="name_style1">Machine FPM</td>
-                                        <td class="value_style1"><span id="MachineFpm_text">0</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="name_style1">Machine RPM</td>
-                                        <td class="value_style1"><span id="MachineRpm_text">0</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td width="120px" class="name_style1">Machine TPH</td>
-                                        <td class="value_style1"><span id="MachineTph_text">0</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="name_style1">Machine Cupfill</td>
-                                        <td class="value_style1"><span id="MachineCupfill_text">0</span></td>
-                                    </tr>
-                                </table>
-
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="ui-grid-a">
+                    </td>
+                    <td style="vertical-align: top">
+                        <div data-role="collapsible-set" aria-orientation="horizontal">
+                            <div data-role="collapsible" data-collapsed="false">
+                                <h3>Quality Distribution
+                                </h3>
+                                <div id="QualityDistribution">
+                                    <!--                    <img id="grade_pie" width="250px" src="./img/images_pie1.jpg"/>-->
 
-                <div class="ui-block-a">
-                    <div data-role="collapsible-set">
-                        <div data-role="collapsible" data-collapsed="false">
-                            <h3>Grade Distribution
-                            </h3>
-                            <div id="GradeDistribution">
-                                <!--                    <img id="grade_pie" width="250px" src="./img/images_pie1.jpg"/>-->
-
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
-                <div class="ui-block-b">
-                    <div data-role="collapsible-set">
-                        <div data-role="collapsible" data-collapsed="false">
-                            <h3>Size Distribution
-                            </h3>
-                            <div id="SizeDistribution">
-                                <!--                    <p>Note: Only example, need further develope</p>
-                            <img id="size_distrubution" width="500px" src="./img/SizeDistrubution.png"/>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+
+                        <div data-role="collapsible-set">
+                            <div data-role="collapsible" data-collapsed="false">
+                                <h3>Size Distribution
+                                </h3>
+                                <div id="SizeDistribution">
+                                    <!--                    <p>Note: Only example, need further develope</p>
+                                        <img id="size_distrubution" width="500px" src="./img/SizeDistrubution.png"/>-->
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
+                    </td>
+                    <td>
+                        <div data-role="collapsible-set">
+                            <div data-role="collapsible" data-collapsed="false">
+                                <h3>Grade Distribution
+                                </h3>
+                                <div id="GradeDistribution">
+                                    <!--                    <img id="grade_pie" width="250px" src="./img/images_pie1.jpg"/>-->
 
-            </div>
-            <!-- /grid-b -->
+                                </div>
+                            </div>
+                        </div>
 
 
 
+                    </td>
+                </tr>
+            </table>
         </div>
-        <div data-theme="a" data-role="footer" data-position="fixed" data-id="myfooter" data-fullscreen="true">
-            <div data-role="navbar" data-iconpos="top">
-                <ul>
-                    <li>
-                        <a href="SizerHome_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="home" class="ui-btn-active ui-state-persist">Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="SizerHistory_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="info">History
-                        </a>
-                    </li>
-                    <li>
-                        <a href="SizerAlarm_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="alert">Alarm
-                        </a>
-                    </li>
-                    <li>
-                        <a href="SizerSetup_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="gear">Setup
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+        <!-- /grid-b -->
+    <div data-theme="a" data-role="footer" data-position="fixed" data-id="myfooter" data-fullscreen="true">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="SizerHome_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="home" class="ui-btn-active ui-state-persist">Home
+                    </a>
+                </li>
+                <li>
+                    <a href="SizerHistory_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="info">History
+                    </a>
+                </li>
+                <li>
+                    <a href="SizerAlarm_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="alert">Alarm
+                    </a>
+                </li>
+                <li>
+                    <a href="SizerSetup_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="gear">Setup
+                    </a>
+                </li>
+            </ul>
         </div>
+
+    </div>
 
     </div>
 
