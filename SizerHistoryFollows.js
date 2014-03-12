@@ -197,6 +197,7 @@
     google.setOnLoadCallback(loadCharts);
 
     function loadCharts() {
+        checkOnline();
         setWholeFeed(default_feed_id);
 
         $('#radio-choice-1').click(function () {
