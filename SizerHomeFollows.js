@@ -24,6 +24,8 @@
 
     // Replace with your own values  
     var default_feed_id = defaultFeeds[0]; // Feed ID  
+    var lastUpdateTime = new Date('2000-1-1 0:0:00');
+    var lastUploadTime = new Date('2000-1-1 0:0:00');
 
     function setWholeFeed(feedID)
     {
@@ -40,31 +42,61 @@
         });
     }
 
+    function checkOnline() {
+        var currentTime = new Date();
+        var seconds = Math.round((currentTime - lastUpdateTime) / 1000);
+        if (seconds > 30) {
+            $("#state").html("Offline");
+            $("#state").removeClass('online_style');
+            $("#state").addClass('offline_style');
+        }
+        setTimeout(checkOnline, 20000);
+    } 
+
     function doDisplaying(feed) {
         if (feed.datastreams) {
             feed.datastreams.forEach(function (datastream) {
-                setFeed(datastream, "VarietyName", "#VarietyName_text");
-                setFeed(datastream, "BatchName", "#BatchName_text");
-                setFeed(datastream, "GrowerName", "#GrowerName_text");
-                setFeed(datastream, "MachineRpm", "#MachineRpm_text");
-                setFeed(datastream, "MachineFpm", "#MachineFpm_text");
-                setFeed(datastream, "MachineTph", "#MachineTph_text");
-                setFeed(datastream, "MachineCupfill", "#MachineCupfill_text");
-                setFeed(datastream, "MachinePph", "#MachinePph_text");
-                setFeedChart(datastream, "GradeDistribution", "GradeDistribution", 'Grade', 'FPM', false);
-                setFeedChart(datastream, "SizeDistribution", "SizeDistribution", 'Size', 'FPM', true);
-                setFeedChart(datastream, "QualityDistribution", "QualityDistribution", 'Quality', 'FPM', false);
-                setFeedChart(datastream, "LanesCupfill", "LanesCupfill", 'Lane', 'Cupfill', true);
+                setState(datastream, "IsConnected", "#state");
+                setText(datastream, "VarietyName", "#VarietyName_text");
+                setText(datastream, "BatchName", "#BatchName_text");
+                setText(datastream, "GrowerName", "#GrowerName_text");
+                setText(datastream, "MachineRpm", "#MachineRpm_text");
+                setText(datastream, "MachineFpm", "#MachineFpm_text");
+                setText(datastream, "MachineTph", "#MachineTph_text");
+                setText(datastream, "MachineCupfill", "#MachineCupfill_text");
+                setText(datastream, "MachinePph", "#MachinePph_text");
+                setChart(datastream, "GradeDistribution", "GradeDistribution", 'Grade', 'FPM', false);
+                setChart(datastream, "SizeDistribution", "SizeDistribution", 'Size', 'FPM', true);
+                setChart(datastream, "QualityDistribution", "QualityDistribution", 'Quality', 'FPM', false);
+                setChart(datastream, "LanesCupfill", "LanesCupfill", 'Lane', 'Cupfill', true);
             });
         }
     }
   
-    function setFeed(datastream, datastreamId, selector) {
+    function setText(datastream, datastreamId, selector) {
         if (datastream.id == datastreamId) {
             $(selector).html( datastream["current_value"] );  
         }
     }
-    
+
+    function setState(datastream, datastreamId, selector) {
+        if (datastream.id == datastreamId) {
+            lastUploadTime = new Date(Date.parse(datastream.at));
+            lastUpdateTime = new Date();
+            //var seconds = Math.round((currentTime - lastUpdateTime) / 1000);
+            if (datastream["current_value"] == "true") {
+                $(selector).html("Online");
+                $(selector).removeClass('offline_style');
+                $(selector).addClass('online_style');
+            } else {
+                $(selector).html("Offline");
+                $(selector).removeClass('online_style');
+                $(selector).addClass('offline_style');
+            }
+            $("#lastUploadTime").html("Last modify time: " + datastream.at);
+        }
+    }
+
     function drawPie(dataString, selector, column1, column2, isBar) {
         //var arrayStr = "'A':30,'B':50,'C':200,'D':140,'E':45,'F':100";
 
@@ -113,7 +145,7 @@
         }
     }
 
-    function setFeedChart(datastream, datastreamId, selector, column1, column2, isBar) {
+    function setChart(datastream, datastreamId, selector, column1, column2, isBar) {
         // Get datastream data from Xively  
         if (datastream.id == datastreamId) {
             drawPie(datastream["current_value"], selector, column1, column2, isBar);
@@ -124,6 +156,7 @@
     google.setOnLoadCallback(loadCharts);
 
     function loadCharts() {
+        checkOnline();
         setWholeFeed(default_feed_id);
     }
     //drawChart();

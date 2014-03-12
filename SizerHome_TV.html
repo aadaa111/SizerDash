@@ -47,6 +47,7 @@
         .value_style1 {
             color: blue;
         }
+
         .value_style2 {
             color: blue;
             width: 40px;
@@ -59,10 +60,34 @@
         #xivelyContent {
             background: #fff;
         }
+
         .ui-collapsible-heading .ui-icon {
             display: none;
         }
-    </style>
+        .online_style {
+            width: 100px;
+            color: white;
+            background: green;
+        }
+         .offline_style {
+            width: 100px;
+           color: white;
+            background: red;
+        }
+         .modify_time_style {
+             position: absolute;
+             right: 4px;
+             top: 25px;
+             font-size: 10px;
+             width: 300px;
+             text-align: right;
+         }
+         .state_text_style {
+             position: absolute;
+             top: 4px;
+             right: 4px;
+         }
+   </style>
     <style type="text/css">
         
     </style>
@@ -70,17 +95,22 @@
 <body>
     <div data-role="page" data-theme="b">
         <div data-role="header" data-position="inline" data-fullscreen="true">
-            <h1 align="center">Sizer Dashboard
+            <h1 align="center">Sizer Dashboard 
             </h1>
+            <div class="state_text_style ">
+                <table>
+                    <tr><td><a id="state" class="offline_style ui-btn-right ui-btn ui-shadow ui-btn-corner-all"> Offline </a></td></tr>
+                    <tr><td><div class="modify_time_style"><a id="lastUploadTime" style="font-size: 10px"></a></div></td></tr>
+                </table>
+            </div>
         </div>
         <div data-role="content">
-            <table style="width:100%; ">
+            <table style="vertical-align: top; width: 100%;">
                 <tr>
-                    <td  style="vertical-align: top; width:50%">
+                    <td style="vertical-align: top; width: 50%">
                         <div data-role="collapsible-set">
                             <div data-role="collapsible" data-collapsed="false">
-                                <h3>Batch Infomation
-                                </h3>
+                                <h3>Batch Infomation</h3>
                                 <div>
                                     <table>
                                         <tr>
@@ -99,65 +129,66 @@
                                 </div>
                             </div>
                         </div>
-                        <table style="vertical-align: top; width:100%">
+                                    
+                        <table style="vertical-align: top; width: 100%">
                             <tr>
-                                <td style="vertical-align: top; width:50%">
-                                <div data-role="collapsible-set">
-                                    <div data-role="collapsible" data-collapsed="false">
-                                        <h3>Speed
-                                        </h3>
-                                        <div>
-                                            <table>
-                                                <tr>
-                                                    <td class="value_style2"><span id="MachineFpm_text">0</span></td>
-                                                    <td class="name_style1">FPM (Fruit Per Minute)</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="value_style2"><span id="MachineRpm_text">0</span></td>
-                                                    <td class="name_style1">RPM (Rods Per Minute)</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="value_style2"><span id="MachineTph_text">0</span></td>
-                                                    <td class="name_style1">TPH (Tonnes Per Hour)</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="value_style2"><span id="MachinePph_text">0</span></td>
-                                                    <td class="name_style1">PPM (Packs Per Minute)</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="value_style2"><span id="MachineCupfill_text">0</span>%</td>
-                                                    <td class="name_style1">Cupfill</td>
-                                                </tr>
-                                            </table>
+                                <td style="vertical-align: top; width: 50%">
+                                    <div data-role="collapsible-set">
+                                        <div data-role="collapsible" data-collapsed="false">
+                                            <h3>Speed
+                                            </h3>
+                                            <div>
+                                                <table>
+                                                    <tr>
+                                                        <td class="value_style2"><span id="MachineRpm_text">0</span></td>
+                                                        <td class="name_style1">RPM (Rods Per Minute)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="value_style2"><span id="MachineFpm_text">0</span></td>
+                                                        <td class="name_style1">FPM (Fruit Per Minute)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="value_style2"><span id="MachineTph_text">0</span></td>
+                                                        <td class="name_style1">TPH (Tonnes Per Hour)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="value_style2"><span id="MachinePph_text">0</span></td>
+                                                        <td class="name_style1">PPM (Packs Per Minute)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="value_style2"><span id="MachineCupfill_text">0</span>%</td>
+                                                        <td class="name_style1">Cupfill</td>
+                                                    </tr>
+                                                </table>
 
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 </td>
                                 <td style="vertical-align: top;">
-                                                                    <div data-role="collapsible-set">
-                                    <div data-role="collapsible" data-collapsed="false">
-                                        <h3>Outside Information
-                                        </h3>
-                                        <div>
-                                            <table>
-                                                <tr>
-                                                    <td class="value_style2"><span id="Span1">0</span></td>
-                                                    <td class="name_style1">Bins dumped at bin dumper</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="value_style2"><span id="Span2">0</span></td>
-                                                    <td class="name_style1">Case count at the stamper</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="value_style2"><span id="Span3">0</span>%</td>
-                                                    <td class="name_style1">Palletized by the robots</td>
-                                                </tr>
-                                            </table>
+                                    <div data-role="collapsible-set">
+                                        <div data-role="collapsible" data-collapsed="false">
+                                            <h3>Outside Information
+                                            </h3>
+                                            <div>
+                                                <table>
+                                                    <tr>
+                                                        <td class="value_style2"><span id="Span1">0</span></td>
+                                                        <td class="name_style1">Bins dumped at bin dumper</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="value_style2"><span id="Span2">0</span></td>
+                                                        <td class="name_style1">Case count at the stamper</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="value_style2"><span id="Span3">0</span>%</td>
+                                                        <td class="name_style1">Palletized by the robots</td>
+                                                    </tr>
+                                                </table>
 
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
                                 </td>
                             </tr>
@@ -202,29 +233,29 @@
             </table>
         </div>
         <!-- /grid-b -->
-    <div data-theme="a" data-role="footer" data-position="fixed" data-id="myfooter" data-fullscreen="true">
-        <div data-role="navbar" data-iconpos="top">
-            <ul>
-                <li>
-                    <a href="SizerHome_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="home" class="ui-btn-active ui-state-persist">Home
-                    </a>
-                </li>
-                <li>
-                    <a href="SizerHistory_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="info">History
-                    </a>
-                </li>
-                <li>
-                    <a href="SizerAlarm_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="alert">Alarm
-                    </a>
-                </li>
-                <li>
-                    <a href="SizerSetup_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="gear">Setup
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <div data-theme="a" data-role="footer" data-position="fixed" data-id="myfooter" data-fullscreen="true">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a href="SizerHome_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="home" class="ui-btn-active ui-state-persist">Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="SizerHistory_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="info">History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="SizerAlarm_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="alert">Alarm
+                        </a>
+                    </li>
+                    <li>
+                        <a href="SizerSetup_TV.html" rel="external" data-transition="fade" data-theme="" data-icon="gear">Setup
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-    </div>
+        </div>
 
     </div>
 
