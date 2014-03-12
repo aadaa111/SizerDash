@@ -39,6 +39,29 @@
         #xivelyContent {
             background: #fff;
         }
+        .online_style {
+            width: 100px;
+            color: white;
+            background: green;
+        }
+         .offline_style {
+            width: 100px;
+           color: white;
+            background: red;
+        }
+        .modify_time_style {
+             position: absolute;
+             right: 4px;
+             top: 25px;
+             font-size: 10px;
+             width: 300px;
+             text-align: right;
+         }
+         .state_text_style {
+             position: absolute;
+             top: 4px;
+             right: 4px;
+         }
     </style>
 
 </head>
@@ -47,6 +70,13 @@
         <div data-role="header" data-position="inline">
             <h1 align="center">Sizer Dashboard
             </h1>
+            <div class="state_text_style ">
+                <table>
+                    <tr><td><a id="state" class="offline_style ui-btn-right ui-btn ui-shadow ui-btn-corner-all"> Offline </a></td></tr>
+                    <tr><td><div class="modify_time_style"><a id="lastUploadTime" style="font-size: 10px"></a></div></td></tr>
+                </table>
+            </div>
+
         </div>
         <div data-role="content">
 
