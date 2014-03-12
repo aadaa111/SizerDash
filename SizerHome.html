@@ -50,12 +50,9 @@
             background: red;
         }
         .modify_time_style {
-             position: absolute;
-             right: 4px;
-             top: 25px;
-             font-size: 10px;
-             width: 300px;
-             text-align: right;
+             font-size: 14px;
+             text-align: left;
+             font-family: black
          }
          .state_text_style {
              position: absolute;
@@ -71,15 +68,12 @@
             <h1 align="center">Sizer Dashboard
             </h1>
             <div class="state_text_style ">
-                <table>
-                    <tr><td><a id="state" class="offline_style ui-btn-right ui-btn ui-shadow ui-btn-corner-all"> Offline </a></td></tr>
-                    <tr><td><div class="modify_time_style"><a id="lastUploadTime" style="font-size: 10px"></a></div></td></tr>
-                </table>
+                    <a id="state" class="offline_style ui-btn-right ui-btn ui-shadow ui-btn-corner-all"> Offline </a>
             </div>
 
         </div>
         <div data-role="content">
-
+<!--            <a id="lastUploadTime"  class="modify_time_style"></a>-->
             <div data-role="collapsible-set">
                 <div data-role="collapsible" data-collapsed="false">
                     <h3>Batch Info
