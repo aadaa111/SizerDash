@@ -77,28 +77,31 @@
             <table style="width:100%; ">
                 <tr>
                     <td  style="vertical-align: top; width:50%">
-                                <div data-role="collapsible-set">
-                                    <div data-role="collapsible" data-collapsed="false">
-                                        <h3>Batch Infomation
-                                        </h3>
-                                        <div>
-                                            <table>
-                                                <tr>
-                                                    <td class="name_style1">Batch Name</td>
-                                                    <td class="value_style1"><span id="BatchName_text"></span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="name_style1">Variety Name</td>
-                                                    <td class="value_style1"><span id="VarietyName_text"></span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="name_style1">Grower Name</td>
-                                                    <td class="value_style1"><span id="GrowerName_text"></span></td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
+                        <div data-role="collapsible-set">
+                            <div data-role="collapsible" data-collapsed="false">
+                                <h3>Batch Infomation
+                                </h3>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td class="name_style1">Batch Name</td>
+                                            <td class="value_style1"><span id="BatchName_text"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name_style1">Variety Name</td>
+                                            <td class="value_style1"><span id="VarietyName_text"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name_style1">Grower Name</td>
+                                            <td class="value_style1"><span id="GrowerName_text"></span></td>
+                                        </tr>
+                                    </table>
                                 </div>
+                            </div>
+                        </div>
+                        <table style="vertical-align: top; width:100%">
+                            <tr>
+                                <td style="vertical-align: top; width:50%">
                                 <div data-role="collapsible-set">
                                     <div data-role="collapsible" data-collapsed="false">
                                         <h3>Speed
@@ -130,7 +133,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div data-role="collapsible-set">
+                                </td>
+                                <td style="vertical-align: top;">
+                                                                    <div data-role="collapsible-set">
                                     <div data-role="collapsible" data-collapsed="false">
                                         <h3>Outside Information
                                         </h3>
@@ -153,6 +158,10 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                     <td style="vertical-align: top">
                         <div data-role="collapsible-set" aria-orientation="horizontal">
@@ -160,8 +169,6 @@
                                 <h3>Quality Distribution
                                 </h3>
                                 <div id="QualityDistribution">
-                                    <!--                    <img id="grade_pie" width="250px" src="./img/images_pie1.jpg"/>-->
-
                                 </div>
                             </div>
                         </div>
@@ -176,8 +183,6 @@
                                 <h3>Size Distribution
                                 </h3>
                                 <div id="SizeDistribution">
-                                    <!--                    <p>Note: Only example, need further develope</p>
-                                        <img id="size_distrubution" width="500px" src="./img/SizeDistrubution.png"/>-->
                                 </div>
                             </div>
                         </div>
@@ -188,14 +193,9 @@
                             <div data-role="collapsible" data-collapsed="false">
                                 <h3>Grade Distribution
                                 </h3>
-                                <div id="GradeDistribution">
-                                    <!--                    <img id="grade_pie" width="250px" src="./img/images_pie1.jpg"/>-->
-
-                                </div>
+                                <div id="GradeDistribution"></div>
                             </div>
                         </div>
-
-
 
                     </td>
                 </tr>

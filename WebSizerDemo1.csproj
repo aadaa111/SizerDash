@@ -62,19 +62,6 @@
     <Content Include="HomeStyleSheet.css" />
     <Content Include="index.html" />
     <Content Include="js\detectmobilebrowser.js" />
-    <Content Include="SizerAlarm_TV.html" />
-    <Content Include="SizerHistory_TV.html" />
-    <Content Include="SizerHomeFollows.js" />
-    <Content Include="SizerHistory.html" />
-    <Content Include="SizerHistoryFollows.js" />
-    <Content Include="SizerHome.html" />
-    <Content Include="HtmlPage2.html" />
-    <Content Include="img\images_pie1.jpg" />
-    <Content Include="img\SizeDistrubution.png" />
-    <Content Include="js\custom.modernizr.js" />
-    <Content Include="js\d3.v2.js" />
-    <Content Include="js\foundation.min.js" />
-    <Content Include="js\jquery.js" />
     <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\images\ajax-loader.gif" />
     <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\images\icons-18-black.png" />
     <Content Include="js\jquery.mobile-1.3.0\demos\css\themes\default\images\icons-18-white.png" />
@@ -117,6 +104,8 @@
     <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\popups\popup.arrow.js" />
     <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\redirect\index.html" />
     <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\redirect\redirect-target.html" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\redirect\redirect.php" />
+    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\redirect\source.php" />
     <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\slider\slider.tooltip.css" />
     <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\slider\slider.tooltip.js" />
     <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\slider\tooltip.html" />
@@ -325,6 +314,19 @@
     <Content Include="js\jquery.mobile-1.3.0\jquery.mobile.structure-1.3.0.min.css" />
     <Content Include="js\jquery.mobile-1.3.0\jquery.mobile.theme-1.3.0.css" />
     <Content Include="js\jquery.mobile-1.3.0\jquery.mobile.theme-1.3.0.min.css" />
+    <Content Include="SizerAlarm_TV.html" />
+    <Content Include="SizerHistory_TV.html" />
+    <Content Include="SizerHomeFollows.js" />
+    <Content Include="SizerHistory.html" />
+    <Content Include="SizerHistoryFollows.js" />
+    <Content Include="SizerHome.html" />
+    <Content Include="HtmlPage2.html" />
+    <Content Include="img\images_pie1.jpg" />
+    <Content Include="img\SizeDistrubution.png" />
+    <Content Include="js\custom.modernizr.js" />
+    <Content Include="js\d3.v2.js" />
+    <Content Include="js\foundation.min.js" />
+    <Content Include="js\jquery.js" />
     <Content Include="js\rickshaw.min.js" />
     <Content Include="js\xivelyjs-1.0.0.min.js" />
     <Content Include="js\zepto.js" />
@@ -339,8 +341,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\.DS_Store" />
-    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\redirect\redirect.php" />
-    <Content Include="js\jquery.mobile-1.3.0\demos\docs\examples\redirect\source.php" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

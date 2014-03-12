@@ -48,6 +48,7 @@
     function doDisplaying(feed) {
         if (feed.datastreams) {
             feed.datastreams.forEach(function (datastream) {
+                //setFeedLine(datastream, "GradeDistribution", "GradeDistribution", 'Time', 'FPM');
                 setFeedLine(datastream, "MachineRpm", "MachineRpm", 'Time', 'RPM');
                 setFeedLine(datastream, "MachineFpm", "MachineFpm", 'Time', 'FPM');
                 setFeedLine(datastream, "MachineCupfill", "MachineCupfill", 'Time', 'RPM');
@@ -108,18 +109,39 @@
                     xively.datastream.history(feedId, datastream.id, { duration: duration, interval: interval, limit: 1000 }, function(datastreamData) {
                         var points = [];
                         var rows = 0;
+                        var cloumns = [];
                         if (datastreamData.datapoints) {
                             datastreamData.datapoints.forEach(function (datapoint) {
                                 points[rows] = [];
                                 var date1 = new Date();
+                                var dataString = datapoint.value;
                                 points[rows][0] = date1.parseISO(datapoint.at);
-                                points[rows++][1] = parseFloat(datapoint.value);
-
+                                var arrayStr1 = dataString.split(",");
+                                if (arrayStr1.length > 1) {
+                                    for (var j = 0; j < arrayStr1.length; j++) {
+                                        arrayStr1[j] = arrayStr1[j].split(':');
+                                        points[rows][1 + j] = parseFloat(arrayStr1[j][1]);
+                                        if (cloumns.length != arrayStr1.length) {
+                                            cloumns[j] = arrayStr1[j][0];
+                                        }
+                                    }
+                                } else {
+                                    points[rows][1] = parseFloat(dataString);
+                                }
+                                rows++;
                             });
                             //var arrayStr = "'A':30,'B':50,'C':200,'D':140,'E':45,'F':100";
                             var data = new google.visualization.DataTable();
                             data.addColumn('datetime', column1);
-                            data.addColumn('number', column2);
+                            if (cloumns.length > 0) {
+                                for (var i = 0; i < cloumns.length; i++) {
+                                    data.addColumn('number', cloumns[i]);
+                                }
+                            } else {
+                                 data.addColumn('number', column2);
+                            }
+                            //console.log(cloumns.length);
+                            //console.log(points);
                             data.addRows(points);
                             // Set chart options
                             var options = {

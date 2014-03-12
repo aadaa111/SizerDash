@@ -70,7 +70,7 @@
 
         var elementId = document.getElementById(selector);
         if (elementId && dataString) {
-                var arrayStr1 = dataString.split(",");
+            var arrayStr1 = dataString.split(",");
             for (var i = 0; i < arrayStr1.length; i++) {
                 arrayStr1[i] = arrayStr1[i].split(':');
                 arrayStr1[i][1] = parseFloat(arrayStr1[i][1]);
@@ -83,7 +83,8 @@
             // Instantiate and draw our chart, passing in some options.
             var height = 300;
             if (!isMobile) {
-                height = 400;
+                console.log(screen.height);
+                height = screen.height /2 - 140;
             }
             else if (arrayStr1.length > 10 && isBar) {
                 height = 40 * arrayStr1.length;
