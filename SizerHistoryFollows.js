@@ -24,6 +24,37 @@
     var duration = '6hours';
     // Replace with your own values  
     var default_feed_id = defaultFeeds[0];          // Feed ID  
+    var lastUpdateTime = new Date('2000-1-1 0:0:00');
+    var lastUploadTime = new Date('2000-1-1 0:0:00');
+
+    function setState(datastream, datastreamId, selector) {
+        if (datastream.id == datastreamId) {
+            lastUploadTime = new Date(Date.parse(datastream.at));
+            lastUpdateTime = new Date();
+            //var seconds = Math.round((currentTime - lastUpdateTime) / 1000);
+            if (datastream["current_value"] == "true") {
+                $(selector).html("Online");
+                $(selector).removeClass('offline_style');
+                $(selector).addClass('online_style');
+            } else {
+                $(selector).html("Offline");
+                $(selector).removeClass('online_style');
+                $(selector).addClass('offline_style');
+            }
+            $("#lastUploadTime").html("Last modify time: " + datastream.at);
+        }
+    }
+
+    function checkOnline() {
+        var currentTime = new Date();
+        var seconds = Math.round((currentTime - lastUpdateTime) / 1000);
+        if (seconds > 30) {
+            $("#state").html("Offline");
+            $("#state").removeClass('online_style');
+            $("#state").addClass('offline_style');
+        }
+        setTimeout(checkOnline, 20000);
+    }
 
     function refreshFeedLine(feedID, datastreamID, selector, column1, column2) {
         // Get datastream data from Xively  
@@ -48,6 +79,7 @@
     function doDisplaying(feed) {
         if (feed.datastreams) {
             feed.datastreams.forEach(function (datastream) {
+                setState(datastream, "IsConnected", "#state");
                 //setFeedLine(datastream, "GradeDistribution", "GradeDistribution", 'Time', 'FPM');
                 setFeedLine(datastream, "MachineRpm", "MachineRpm", 'Time', 'RPM');
                 setFeedLine(datastream, "MachineFpm", "MachineFpm", 'Time', 'FPM');
@@ -146,7 +178,7 @@
                             // Set chart options
                             var options = {
                                 //'width': 400,
-                                //'height': 300,
+                                height: 180,
                                 hAxis: { format: timeFormat, viewWindowMode: 'maximized' },
                                 //vAxis: { title: column2},
                             };

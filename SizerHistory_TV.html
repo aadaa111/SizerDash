@@ -4,7 +4,8 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="js/jquery.mobile-1.3.0/jquery.mobile-1.3.0.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="CommonStyle.css" />
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
 	<script src="js/custom.modernizr.js"></script>
@@ -22,6 +23,12 @@
             <h1 align="center">
                 History
             </h1>
+            <div class="state_text_style ">
+                <table>
+                    <tr><td><a id="state" class="offline_style ui-btn-right ui-btn ui-shadow ui-btn-corner-all"> Offline </a></td></tr>
+                    <tr><td><div class="modify_time_style"><a id="lastUploadTime" style="font-size: 10px"></a></div></td></tr>
+                </table>
+            </div>
         </div>
         <div data-role="content">
 <!--            <div data-role="collapsible-set">

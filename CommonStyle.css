@@ -1,0 +1,26 @@
+﻿.online_style {
+    width: 100px;
+    color: white;
+    background: green;
+}
+
+.offline_style {
+    width: 100px;
+    color: white;
+    background: red;
+}
+
+.modify_time_style {
+    position: absolute;
+    right: 4px;
+    top: 25px;
+    font-size: 10px;
+    width: 300px;
+    text-align: right;
+}
+
+.state_text_style {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
