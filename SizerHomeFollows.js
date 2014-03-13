@@ -137,6 +137,7 @@
                     'chartArea': { left: 50, top: 20, height:"85%" },
                     vAxis: { title: column1 },
                     hAxis: { title: column2 },
+                    colors: ['green', 'BurlyWood', 'orange', 'red', 'purple', 'DarkSlateGray']
                 };
                 var chart = new google.visualization.PieChart(elementId);
                 chart.draw(data, options);

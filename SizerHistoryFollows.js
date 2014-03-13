@@ -83,8 +83,8 @@
                 //setFeedLine(datastream, "GradeDistribution", "GradeDistribution", 'Time', 'FPM');
                 setFeedLine(datastream, "MachineRpm", "MachineRpm", 'Time', 'RPM');
                 setFeedLine(datastream, "MachineFpm", "MachineFpm", 'Time', 'FPM');
-                setFeedLine(datastream, "MachineCupfill", "MachineCupfill", 'Time', 'RPM');
-                setFeedLine(datastream, "MachineTph", "MachineTph", 'Time', 'FPM');
+                setFeedLine(datastream, "MachineCupfill", "MachineCupfill", 'Time', '% Cupfill');
+                setFeedLine(datastream, "MachineTph", "MachineTph", 'Time', 'TPH');
             });
         }
     }
