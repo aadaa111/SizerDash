@@ -127,13 +127,13 @@
                 timeFormat = "MM-dd HH:mm";
             }
             if (duration == '1month') {
-                interval = 1800;
+                interval = 10800;
                 diff = 2628000000;
                 timeFormat = "yy-MM-dd HH:mm";
             }
             if (duration == '90days') {
                 diff = 7884000000;
-                interval = 10800;
+                interval = 21600;
                 timeFormat = "yy-MM-dd HH:mm";
             }
             then.setTime(now.getTime() - diff);
@@ -224,10 +224,9 @@
     
     function refreshChart(selectedDuration) {
         duration = selectedDuration;
-        setFeedLine(default_feed_id, "MachineRpm", "MachineRpm", 'Time', 'RPM');
-        setFeedLine(default_feed_id, "MachineFpm", "MachineFpm", 'Time', 'FPM');
-        setFeedLine(default_feed_id, "MachineCupfill", "MachineCupfill", 'Time', 'RPM');
-        setFeedLine(default_feed_id, "MachineTph", "MachineTph", 'Time', 'FPM');
+        xively.feed.get(default_feed_id, function (feed) {
+            doDisplaying(feed);
+        });
     }
 
 })(jQuery);
