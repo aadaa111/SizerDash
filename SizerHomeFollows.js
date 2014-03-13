@@ -19,13 +19,22 @@
         dataInterval = 10, // Default interval for data to be displayed (in seconds)
         dataColor = '', // CSS HEX value of color to represent data (omit leading #)
         hideForm = 0; // To hide input form use value of 1, otherwise set to 0
-
+    var pieColors = ['green', 'BurlyWood', 'orange', 'purple', 'DarkSlateGray', 'DodgerBlue', 'Fuchsia', 'MediumSeaGreen', 'GoldenRod', 'CadetBlue', 'Black', 'DarkOrchid', 'Gold', 'IndianRed', 'Indigo ', 'LimeGreen', 'Olive', 'Orchid'];
     xively.setKey(defaultKey);
 
     // Replace with your own values  
     var default_feed_id = defaultFeeds[0]; // Feed ID  
     var lastUpdateTime = new Date('2000-1-1 0:0:00');
     var lastUploadTime = new Date('2000-1-1 0:0:00');
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.round(Math.random() * 15)];
+        }
+        return color;
+    }
 
     function setWholeFeed(feedID)
     {
@@ -103,9 +112,18 @@
         var elementId = document.getElementById(selector);
         if (elementId && dataString) {
             var arrayStr1 = dataString.split(",");
+            var colors = [];
             for (var i = 0; i < arrayStr1.length; i++) {
                 arrayStr1[i] = arrayStr1[i].split(':');
                 arrayStr1[i][1] = parseFloat(arrayStr1[i][1]);
+
+                if (!isBar) {
+                    if(i < pieColors.length) {
+                        colors[i] = pieColors[i];
+                    } else {
+                        colors[i] = getRandomColor();
+                    }
+                }
             }
             var data = new google.visualization.DataTable();
             data.addColumn('string', column1);
@@ -132,12 +150,13 @@
                 var chart = new google.visualization.BarChart(document.getElementById(selector));
                 chart.draw(data, options);
             } else {
+                colors[arrayStr1.length - 1] = 'red';
                 var options = {
                     'height': height,
                     'chartArea': { left: 50, top: 20, height:"85%" },
                     vAxis: { title: column1 },
                     hAxis: { title: column2 },
-                    colors: ['green', 'BurlyWood', 'orange', 'red', 'purple', 'DarkSlateGray']
+                    colors: colors,
                 };
                 var chart = new google.visualization.PieChart(elementId);
                 chart.draw(data, options);
