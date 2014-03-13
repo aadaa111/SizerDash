@@ -1,4 +1,5 @@
 ﻿(function($) {
+    var isMobile = jQuery.browser.mobile;
     /*
 	EXAMPLE CONFIGURATION
 
@@ -131,11 +132,9 @@
             // Set chart options
             // Instantiate and draw our chart, passing in some options.
             var height = 300;
-            if (window.isMobile && !window.isMobile) {
+            if (!isMobile) {
+                console.log(screen.height);
                 height = screen.height /2 - 140;
-            }
-            if (!window.isMobile) {
-                console.log("isMobile not set");
             }
             else if (arrayStr1.length > 10 && isBar) {
                 height = 40 * arrayStr1.length;
