@@ -20,12 +20,7 @@
 
 
     <script type="text/javascript">
-        var useCss1 = false;
-        if (useCss1) {
-            document.write('<link  href="blah1.cs" />');
-        } else {
-            document.write('<link ref="stylesheet1"  href="HomeStyleSheet.css" />');
-        }
+        var isMobile = false;
         function style_set() {
             $("h3 a").click(function (event) {
                 return false;
@@ -34,9 +29,6 @@
         $(document).ready(function () {
             style_set();
         });
-
-
-
     </script>
 
     <style type="text/css">
