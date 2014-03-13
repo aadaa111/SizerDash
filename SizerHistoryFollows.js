@@ -118,7 +118,7 @@
             }
             if (duration == '1day') {
                 diff = 86400000;
-                interval = 60;
+                interval = 300;
                 timeFormat = "HH:mm";
             }
             if (duration == '1week') {
