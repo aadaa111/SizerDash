@@ -106,6 +106,8 @@
         }
     }
 
+    var allCharts = [];
+
     function drawPie(dataString, selector, column1, column2, isBar) {
         //var arrayStr = "'A':30,'B':50,'C':200,'D':140,'E':45,'F':100";
 
@@ -139,6 +141,9 @@
             else if (arrayStr1.length > 10 && isBar) {
                 height = 40 * arrayStr1.length;
             }
+            if (allCharts[selector]) {
+                allCharts[selector].clearChart();
+            }
             if (isBar) {
                 var options = {
                     //'width': 400,
@@ -160,6 +165,7 @@
                 };
                 var chart = new google.visualization.PieChart(elementId);
                 chart.draw(data, options);
+                allCharts[selector] = chart;
             }
            
         }

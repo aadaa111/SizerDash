@@ -26,6 +26,7 @@
     var default_feed_id = defaultFeeds[0];          // Feed ID  
     var lastUpdateTime = new Date('2000-1-1 0:0:00');
     var lastUploadTime = new Date('2000-1-1 0:0:00');
+    var allCharts = [];
 
     function setState(datastream, datastreamId, selector) {
         if (datastream.id == datastreamId) {
@@ -183,9 +184,13 @@
                                 //vAxis: { title: column2},
                             };
                             // Instantiate and draw our chart, passing in some options.
+                            if (allCharts[selector]) {
+                                allCharts[selector].clearChart();
+                            }
                             var chart = new google.visualization.LineChart(elementId);
-                            chart.draw(data, options);
                             
+                            chart.draw(data, options);
+                            allCharts[selector] = chart;
                         }
                     });
                 }            
