@@ -171,7 +171,7 @@
             drawPie(datastream["current_value"], selector, column1, column2, isBar);
         }
     }
-    google.load("visualization", "1", { packages: ["corechart"] });
+    google.load("visualization", "1.1", { packages: ["corechart"] });
     
     google.setOnLoadCallback(loadCharts);
 
